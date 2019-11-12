@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="card card-body bg-light mt-3 mb-3">
+        <h1 class="card-title text-center"><i class="fa fa-book"></i> Books List</h1>
+        <div *ngFor="let book of books" class="card-body">
+            <ul class="card card-body bg-info">
+                <div class="list-group">
+                <li class="list-group-item"><span class="text-info">Book Name: </span>{{ book.bookName }}</li>
+                <li class="list-group-item"><span class="text-success">Author: </span>{{ book.authorName }}</li>
+                </div>
+            </ul>
+        </div>
+    </div>
+</div>

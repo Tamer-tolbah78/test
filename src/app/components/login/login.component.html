@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row justify-content-center mt-3">
+        <div class="jumbotron col-xs-4 mt-3">
+            <h1 class="text-center display-4 text-info mb-3">Welcome to Books Library</h1>
+            <hr class="my-4">
+            <p class="lead text-center">Please enter your name & password to unlock</p>
+
+            <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+                <div class="form-group row">
+                    <label for="userName" class="col-sm-3">User Name: </label>
+                    <input class="form-control shadow-sm p-3 col-sm-6" type="text" id="userName" name="userName"
+                        #userName="ngModel" ngModel [ngClass]="{'is-invalid':userName.errors && userName.touched}"
+                        required minlength="3">
+                    <div [hidden]="!userName.errors?.required" class="invalid-feedback col-sm-3">user name is required
+                    </div>
+                    <div [hidden]="!userName.errors?.minlength" class="invalid-feedback col-sm-3">Must be 3 characters
+                        at
+                        least</div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="password" class="col-sm-3">Password: </label>
+                    <input class="form-control shadow-sm p-3 col-sm-6" type="password" id="password" name="password"
+                        #password="ngModel" ngModel [ngClass]="{'is-invalid':password.errors && password.touched}"
+                        required minlength="6">
+                    <div [hidden]="!password.errors?.required" class="invalid-feedback col-sm-3">please enter password
+                    </div>
+                    <div [hidden]="!password.errors?.minlength" class="invalid-feedback col-sm-3">Must be 6 characters
+                        at
+                        least</div>
+                </div>
+                <div class="row justify-content-center">
+                    <button [disabled]="!userForm.valid" class="col-4 btn btn-primary">Log in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
