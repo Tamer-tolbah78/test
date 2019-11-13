@@ -1,3 +1,4 @@
+import { SessionService } from './../../services/session.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  homeLink = "/"
+
+  constructor(private session: SessionService) { 
+
+  }
 
   ngOnInit() {
+    this.homeLink = this.session.isLoggedIn ? "/" : "/dashboard"
   }
 
 }

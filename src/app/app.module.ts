@@ -8,6 +8,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { BooksComponent } from './components/books/books.component';
 import { FormsModule } from '@angular/forms'
 import { UsersService } from './services/users.service';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { UsersService } from './services/users.service';
     UsersComponent,
     LoginComponent,
     NavBarComponent,
-    BooksComponent
+    BooksComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
