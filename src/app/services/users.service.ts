@@ -10,7 +10,7 @@ export class UsersService {
     this.users = [
       {
      username: 'tamer.tolbah@yahoo.com',
-     password: '123123456',
+     password: '123456',
      userGivenName: 'Tamer',
      books: 2
      },

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user.module';
-import { UsersService } from '../../services/users.service'
+import { UsersService } from '../../services/users.service';
+import { SessionService } from '../../services/session.service'
 
 @Component({
   selector: 'app-users',
@@ -9,7 +10,8 @@ import { UsersService } from '../../services/users.service'
 })
 export class UsersComponent implements OnInit {
   users: User[]
-  constructor(private UsersService: UsersService) { }
+  loggedUser = this.session.getLoggedInUser().userGivenName
+  constructor(private UsersService: UsersService, private session: SessionService) { }
 
   ngOnInit() {
     this.users = this.UsersService.getUsers()

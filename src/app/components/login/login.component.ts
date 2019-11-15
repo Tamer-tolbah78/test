@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   users: User[];
   isLogedIn: boolean = false
 
-  constructor(private UsersService: UsersService, private session: SessionService) { }
+  constructor(private UsersService: UsersService, private session: SessionService, private routing: Router) { }
 
   ngOnInit() {
     this.users = this.UsersService.getUsers()
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   onSubmit(form: NgForm) {
     let usrName = form.value['userName'];
     let psword = form.value['password'];
-    (x=>(x.username == usrName && x.password == psword));
+    let user = this.UsersService.getUsers().find(x=>(x.username == usrName && x.password == psword));
     if(user) {this.session.setLoggedUser(user);
     this.routing.navigate(['users']);}
   else {alert('UserName / Password Incorrect')};

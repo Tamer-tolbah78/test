@@ -13,5 +13,4 @@ export class NavBarComponent implements OnInit {
   ngOnInit() {
     this.homeLink = this.session.isLoggedIn ? "/": "/dashboard"
   }
-
 }
