@@ -8,21 +8,25 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { BooksComponent } from './components/books/books.component';
 import { FormsModule } from '@angular/forms'
 import { UsersService } from './services/users.service';
-
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SessionService } from './services/session.service';
+import { GuardsComponent } from './guards/guards.component'
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     LoginComponent,
     NavBarComponent,
-    BooksComponent
+    BooksComponent,
+    DashboardComponent,
+    GuardsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [UsersService],
+  providers: [UsersService,SessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
