@@ -12,7 +12,7 @@
         <tr *ngFor="let user of users">
                 <td>{{ user.userGivenName }}</td>
                 <td>{{ user.books }}</td>
-                <td><button class="btn btn-warning btn-sm" *ngIf="loggedUser == user.userGivenName ">Details</button></td>
+                <td><button class="btn btn-warning btn-sm" *ngIf="loggedUser == user.userGivenName">Details</button></td>
             </tr>
         </tbody>
     </table>

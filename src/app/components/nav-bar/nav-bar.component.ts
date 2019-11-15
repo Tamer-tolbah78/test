@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SessionService } from '../../services/session.service'
+import { SessionService } from '../../services/session.service';
+
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,6 +12,6 @@ export class NavBarComponent implements OnInit {
   constructor(private session: SessionService) { }
 
   ngOnInit() {
-    this.homeLink = this.session.isLoggedIn ? "/": "/dashboard"
+    this.homeLink = this.session.isLoggedIn ? "/" : "/dashboard"
   }
 }
