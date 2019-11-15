@@ -12,7 +12,7 @@ export class GuardsComponent implements OnInit {
 
   constructor(private sessionService: SessionService) { }
 
-  CanActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {return this.sessionService.isLoggedIn}
+  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {return this.sessionService.isLoggedIn}
   ngOnInit() {
   }
 
