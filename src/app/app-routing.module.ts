@@ -9,9 +9,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component'
 
 const routes: Routes = [
   {path:'', component: LoginComponent},
-  {path:'dashboard', component: DashboardComponent, canActivate:[GuardsComponent]},
-  {path:'users', component: UsersComponent, canActivate:[GuardsComponent]},
-  {path:'books', component: BooksComponent, canActivate:[GuardsComponent]}
+  {path:'dashboard', component: DashboardComponent},
+  {path:'users', component: UsersComponent},
+  {path:'books', component: BooksComponent}
 ];
 
 @NgModule({
